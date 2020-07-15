@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/14 16:06:20 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 10:49:43 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/wait.h>
+# include <dirent.h>
 
 #define	BUFF_SIZE 32
 
@@ -30,5 +31,8 @@ int forking(char *str, char **arg);
 int ft_echo(char **str);
 char *Get_path(char *str);
 int compare(char *str1, char *str2);
+int error(char **str);
+int count(char *str);
+char **split(char *str);
 
 #endif

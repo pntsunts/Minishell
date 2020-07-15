@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 08:14:14 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/14 15:44:53 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 10:51:41 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ static int check_args(char **str)
 	run = 1;
 
 	if (!str || !*str || !**str || str[0] == NULL)
+	{
 		return (1);
+	}
 	else if (ft_strcmp(*str, "exit") == 0)
 	{
 		return (0);
@@ -90,7 +92,7 @@ static void	readFiles(void)
 	{
 		ft_putstr("Wethinkcode\033[32m$>\033[36m ");
 		str = getLines();
-		arg = ft_strsplit(str, ' ');
+		arg = split(str);
 		free(str);
 		run = check_args(arg);
 	}
@@ -118,7 +120,7 @@ int main(int ac, char **av, char **str)
 	(void)av;
 	getData(str);
 	readFiles();
-//	sleep(10);
+	//sleep(10);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 09:08:42 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/14 16:19:01 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/14 16:28:46 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void env_unset(char *str)
 	char **store;
 	char *tmp;
 	int i = 0;
+	char *del;
 
 	store = (char **)malloc(sizeof(char *) * (envLe(Data) + 1));
 	env_cop(store);
@@ -53,7 +54,8 @@ void env_unset(char *str)
 		tmp = ft_strjoin(str, "=");
 		if (compare(Data[i], tmp) == 1)
 		{
-			Data[envLe(Data) - 1] = NULL;
+			del = Data[envLe(Data) - 1] = NULL;
+			free(del);
 		}
 		i++;
 	}
