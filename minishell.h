@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/15 10:49:43 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:00:42 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ int compare(char *str1, char *str2);
 int error(char **str);
 int count(char *str);
 char **split(char *str);
+void cd(char *new_path);
+void pwd();
+void env_setup(char *str, char *envval);
+int set_cd(char **str);
+char *Get_cd(char *str);
+int exe(char **str);
 
 #endif
