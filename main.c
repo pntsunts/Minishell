@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 08:14:14 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/15 10:51:41 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:54:32 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,19 @@ static int check_args(char **str)
 		ft_echo(str);
 		return (1);
 	}
+	else if (ft_strcmp(*str, "pwd") == 0)
+	{
+		pwd();
+		return (1);
+	}
+	else  if (ft_strcmp(*str, "cd") == 0)
+	{
+		cd(str[1]);
+		//set_cd(str);
+		return (1);
+	}
 	return (forking(str[0], str));
+	//return (exe(str));
 }
 
 static void	readFiles(void)
