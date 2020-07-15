@@ -6,24 +6,14 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 09:32:57 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/14 16:06:17 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 09:23:13 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-/*static char *ft_take(const char *str, int i)
-{
-	while (*str)
-	{
-		if (*str == i)
-			return ((char *)str);
-		i++;
-	}
-	return (0);
-}*/
 
- int		compare(char *str1, char *str2)
+int		compare(char *str1, char *str2)
 {
 	int i;
 
@@ -61,6 +51,7 @@ int ft_echo(char **str)
 {
 	char *path;
 	int i;
+	int j;
 
 	i = 1;
 	if (!str[1])
@@ -70,6 +61,13 @@ int ft_echo(char **str)
 	}
 	while (str[i])
 	{
+		j = -1;
+
+		while (str[i][++j] != '\0')
+		{
+			if (str[i][j] == '\"')
+				str[i][j] = 127;
+		}
 		if (str[i][0] == '$')
 		{
 			path = Get_path(str[i++] + 1);
