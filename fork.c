@@ -6,13 +6,13 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 12:17:42 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/15 16:34:34 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:54:13 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-/*static int path_man(char **str, char **path)
+static int path_man(char **str, char **path)
 {
 	int i;
 	struct stat fstat;
@@ -34,7 +34,7 @@
 		free(tmp2);
 	}
 	return (0);
-}*/
+}
 
 int forking(char *str, char **arg)
 {
@@ -55,7 +55,7 @@ int forking(char *str, char **arg)
 	return (1);
 }
 
-/*int exe(char **str)
+int exe(char **str)
 {
 	struct stat fstat;
 	char **path;
@@ -78,5 +78,5 @@ int forking(char *str, char **arg)
 	}
 	free(path);
 	return (1);
-}*/
+}
 
