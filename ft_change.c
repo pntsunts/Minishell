@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 13:34:44 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/15 15:47:10 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/16 09:56:37 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ char	*Get_cd(char *str)
 
 void swipe(char *new_path)
 {
-//	char *tmp;
-
 	char old_path[1024];
-	//tmp = getcwd(old_path, 1024);
 	getcwd(old_path, 1024);
 
 	if (chdir(new_path) < 0)
@@ -57,21 +54,6 @@ void swipe(char *new_path)
 	}
 }
 
-char *run(char *i)
-{
-	i++;
-	i++;
-	return (i);
-}
-
-void	home(char *str, char *arg)
-{
-	char *tmp;
-
-	tmp = ft_strjoin(str, ft_strjoin("/", run(arg)));
-	swipe(tmp);
-}
-
 int set_cd(char **str)
 {
 	char *path;
@@ -90,17 +72,22 @@ int set_cd(char **str)
 			cd(Get_cd("OLDPWD"));
 			return (1);
 		}
-		if (str[1][0] == '/')
+		
+		if (str[1][0] == '~' && str[1][1] == '/' && str[1][2])
 		{
-			swipe(str[1] + 1);
-		}
-		else if (str[1][0] == '~' && str[1][1] == '/')
-		{
-			home(path, str[1]);
+			swipe(&str[1][2]);
 			return (1);
 		}
-		swipe(str[1]);
-		return (1);
+		if (str[1][0] == '/' && str[1][1])
+		{
+			swipe(&str[1][1]);
+			return (1);
+		}
+		else
+		{
+			swipe(str[1]);
+			return (1);
+		}
 	}
 	return (1);
 }
