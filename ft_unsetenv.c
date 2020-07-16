@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 09:08:42 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/14 16:28:46 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/16 17:00:42 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void env_unset(char *str)
 		tmp = ft_strjoin(str, "=");
 		if (compare(Data[i], tmp) == 1)
 		{
+			ft_putendl(Data[i]);
 			del = Data[envLe(Data) - 1] = NULL;
 			free(del);
 		}

@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 10:07:29 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/16 16:08:42 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int		get_next_line(const int fd, char **line);
 size_t  dataLen(char **str);
 int checkStr(char **str);
 int check(char **str);
-int forking(char *str, char **arg);
 int ft_echo(char **str);
 char *Get_path(char *str);
 int compare(char *str1, char *str2);
@@ -40,5 +39,7 @@ void env_setup(char *str, char *envval);
 int set_cd(char **str);
 char *Get_cd(char *str);
 int exe(char **str);
+int bin(char **str);
+int in_exec(char *str, char **arg);
 
 #endif

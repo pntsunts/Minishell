@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 13:34:44 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 09:56:37 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/16 17:11:17 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*Get_cd(char *str)
 			store = ft_strchr(Data[i], '=');
 			return (store + 1);
 		}
+		free(tmp);
 		i++;
 	}
 	return (NULL);
@@ -65,20 +66,25 @@ int set_cd(char **str)
 		swipe(path);
 		return (1);
 	}
+	if (str[1][0] == '-' && !str[1][1])
+	{
+		chdir("..");
+		swipe(Get_cd("OLDPWD"));
+		return (1);
+	}
 	else
 	{	
-		if (str[1][0] == '-' && !str[1][1])
+		/*if (str[1][0] == '-' && !str[1][1])
 		{
-			cd(Get_cd("OLDPWD"));
+			swipe(Get_cd("OLDPWD"));
 			return (1);
-		}
-		
+		}*/	
 		if (str[1][0] == '~' && str[1][1] == '/' && str[1][2])
 		{
 			swipe(&str[1][2]);
 			return (1);
 		}
-		if (str[1][0] == '/' && str[1][1])
+		else if (str[1][0] == '/' && str[1][1])
 		{
 			swipe(&str[1][1]);
 			return (1);

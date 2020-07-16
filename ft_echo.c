@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 09:32:57 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 09:11:45 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/16 17:10:12 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	*Get_path(char *str)
 			store = ft_strchr(Data[i], '=');
 			ft_putstr(store + 1);
 		}
+		free(tmp);
 		i++;
 	}
 	return (NULL);
