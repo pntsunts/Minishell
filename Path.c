@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 15:25:22 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 17:12:00 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/17 12:03:54 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int bin(char **str)
 		return (1);
 	else
 		i = man_path(str, path);
+	return (1);
 	return (1);
 }

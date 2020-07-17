@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 10:05:50 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 17:12:35 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/17 12:28:40 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void env_setup(char *str, char *envval)
 	tmp = ft_strjoin(str, ft_strjoin("=", envval));
 	Data[envLen(Data) + 1] = NULL;
 	Data[envLen(Data)] = tmp;
-//	Data[envLen(Data) + 1] = NULL;
-	//ft_putendl(tmp);
 }
 
 int checkStr(char **str)

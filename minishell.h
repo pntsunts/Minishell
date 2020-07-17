@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/07/16 16:08:42 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/07/17 12:12:24 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ char *Get_cd(char *str);
 int exe(char **str);
 int bin(char **str);
 int in_exec(char *str, char **arg);
+//void Path_unset(char *str);
 
 #endif
